@@ -226,7 +226,7 @@ function Home() {
                 {/* Search bar and options */}
                 <div className="grid grid-cols-2 max-md:grid-cols-1 gap-y-[1vw] mx-[1vw] mb-[1vw] max-md:gap-y-[5vw] max-md:mb-[2vw]">
                     {/* Search Bar */}
-                    <div className="flex justify-between items-center px-[1vw] bg-gradient-to-r from-[#4a4a4a] to-[#444444] rounded-full py-[0.2vw] h-[3vw] max-md:h-[10vw] max-md:px-[3vw]">
+                    <div className="flex justify-between items-center px-[1vw] bg-gradient-to-r from-[#4a4a4a] to-[#444444] rounded-full py'[0.2vw] h-[3vw] max-md:h-[10vw] max-md:px-[3vw]">
                         <div className="text-[1vw] max-md:text-[3vw] flex justify-center">
                             {serch === '' ? <img
                                 className="inline-block invert h-[2vw] max-md:h-[5vw]"
@@ -252,52 +252,29 @@ function Home() {
                         </button>
                     </div>
 
-                    {/* Design Type Buttons */}
-                    <div className="flex flex-wrap justify-start items-center max-h-[6vw] overflow-y-auto gap-x-[1vw] gap-y-[0.5vw] max-md:max-h-[15vw] max-md:gap-x-[2vw] max-md:gap-y-[2vw]">
-                        {showMore ? (
-                            typeOfSalesRoles.map((value, key) => (
-                                <button
-                                    onClick={(e) => { setOccpation(e.target.innerText) }}
-                                    key={key}
-                                    type="button"
-                                    className="text-[1vw] border-[0.15vw] px-[1vw] py-[0.3vw] rounded-[2vw] whitespace-nowrap max-md:text-[3vw] max-md:px-[2vw]"
-                                >
-                                    {value}
-                                </button>
-                            ))
-                        ) : (
-                            <>
-                                <button
-                                    onClick={(e) => { setOccpation(e.target.innerText) }}
-                                    type="button"
-                                    className="text-[1vw] border-[0.15vw] px-[1vw] py-[0.3vw] rounded-[2vw] whitespace-nowrap max-md:text-[3vw] max-md:px-[2vw]"
-                                >
-                                    {typeOfSalesRoles[0]}
-                                </button>
-                                <button
-                                    onClick={(e) => { setOccpation(e.target.innerText) }}
-                                    type="button"
-                                    className="text-[1vw] border-[0.15vw] px-[1vw] py-[0.3vw] rounded-[2vw] whitespace-nowrap max-md:text-[3vw] max-md:px-[2vw]"
-                                >
-                                    {typeOfSalesRoles[1]}
-                                </button>
-                            </>
-                        )}
-                        {roleType === '' ? <button
-                            type="button"
-                            onClick={() => setShowMore(!showMore)}
-                            className="text-[1vw] bg-[#736adb] px-[1vw] py-[0.3vw] rounded-[2vw] whitespace-nowrap max-md:text-[3vw]"
+                    {/* Type of role Dropdown */}
+                    <div className="flex justify-start items-center gap-x-[1vw] max-md:gap-x-[2vw]">
+                        <select
+                            value={roleType}
+                            onChange={(e) => setOccpation(e.target.value)}
+                            className="text-[1vw] max-md:text-[3vw] bg-[#4a4a4a] text-white border-[0.15vw] border-white/50 rounded-[2vw] px-[1vw] py-[0.3vw] focus:outline-none max-md:px-[2vw] max-md:py-[1vw]"
                         >
-                            {showMore ? "Show Less" : "Show More"}
-                        </button> :
+                            <option value="">Select Role Type</option>
+                            {typeOfSalesRoles.map((value, key) => (
+                                <option key={key} value={value}>
+                                    {value}
+                                </option>
+                            ))}
+                        </select>
+                        {roleType !== '' && (
                             <button
                                 type="button"
                                 onClick={() => setOccpation('')}
-                                className="text-[1vw] bg-[#736adb] px-[1vw] py-[0.3vw] rounded-[2vw] whitespace-nowrap max-md:text-[3vw]"
+                                className="text-[1vw] bg-[#736adb] px-[1vw] py-[0.3vw] rounded-[2vw] whitespace-nowrap max-md:text-[3vw] max-md:px-[2vw] max-md:py-[1vw]"
                             >
-                                Remove
+                                Clear
                             </button>
-                        }
+                        )}
                     </div>
                 </div>
             </div>
@@ -392,14 +369,7 @@ function Home() {
                         className={`flex max-md:flex-col items-center gap-x-[1vw] ${currentOption === 1 ? "underline rounded-[2vw] bg-white/20 px-[1vw] py-[0.5vw]" : ""}`}>
                         <img className='max-md:h-[10vw] invert h-[1.5vw]'
                             src="https://img.icons8.com/?size=100&id=TZ2lKyH3LVjx&format=png&color=000000" alt="" />
-                        Homw
-                    </button>
-                    <button type="button"
-                        onClick={() => nav('/wallet')}
-                        className={`flex max-md:flex-col items-center gap-x-[1vw] ${currentOption === 2 ? "underline rounded-[2vw] bg-white/20 px-[1vw] py-[0.5vw]" : ""}`}>
-                        <img className="max-md:h-[10vw] invert h-[1.5vw]"
-                            src="https://img.icons8.com/?size=100&id=209&format=png&color=000000" alt="" />
-                        Wallet
+                        Home
                     </button>
                     <button type="button"
                         onClick={() => nav('/chats')}
