@@ -31,7 +31,7 @@ function MyOrder(){
         <>
         <div className="bg-gradient-to-br from-[#393939] to-[#121212] h-dvh w-[85vw] max-md:w-[100vw]">
              <button 
-                    onClick={() => window.location.reload()} 
+                    onClick={() => nav("/profile")} 
                     className="text-white poppins-bold -tracking-normal text-[2.5vw] max-md:text-[5vw] pl-[1vw] max-md:pl-[2vw] max-md:py-[2vw] cursor-pointer"
                 >
                     <img 
