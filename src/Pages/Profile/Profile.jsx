@@ -21,7 +21,7 @@ function Profile() {
                     case 1:
                          return <h1><MyChat/></h1>;
                     case 3:
-                        return <h1><MyOrder/></h1>;
+                        return <MyOrder setOption={setOption}/>;
                     case 4:
                         return <Feedbackrating/>
                     case 5:
