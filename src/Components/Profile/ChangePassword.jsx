@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-function ChangePassword({ setOption }) {
+function ChangePassword({setOption}) {
   const nav = useNavigate();
   const [togglePassword, setTogglePassword] = useState(false);
   const [toggleConfirmPassword, setToggleConfirmPassword] = useState(false);
@@ -42,7 +42,7 @@ function ChangePassword({ setOption }) {
   return (
     <div className="bg-gradient-to-br from-[#393939] to-[#121212] h-auto w-[100vw] ">
       <button
-        onClick={() => setOption(0)}
+       onClick={() =>setOption(0)}
         className="text-white poppins-bold -tracking-normal text-[2vw] max-md:text-[5vw] pl-[1vw] max-md:pl-[2vw] max-md:py-[2vw] cursor-pointer"
       >
         <img
