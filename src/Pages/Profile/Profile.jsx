@@ -14,24 +14,24 @@ function Profile() {
     return (
         <div className="relative flex flex-row ">
             {/* profile container */}
-            {(() => {
+               {(() => {
                     switch (option) {
                      case 0:
                          return <ProfileContainer/>;
                     case 1:
-                         return <h1><MyChat/></h1>;
+                         return <MyChat setOption={setOption}/>;
                     case 3:
                         return <MyOrder setOption={setOption}/>;
                     case 4:
-                        return <Feedbackrating/>
+                        return <Feedbackrating setOption={setOption}/>;
                     case 5:
-                        return <ChangePassword/>
-                        case 6:
-                        return <SupportHelp/>
-                        case 7:
-                        return <h1><Setting/></h1>
+                        return <ChangePassword setOption={setOption}/>;
+                    case 6:
+                        return <SupportHelp setOption={setOption}/>;
+                    case 7:
+                        return <Setting setOption={setOption}/>;
                     default:
-                        return <h1>404 Not Found</h1>;
+                             return <ProfileContainer/>;
         }
       })()}
         <div className={`max-md:absolute w-[15%] z-100 h-screen bg-gradient-to-br from-[#383838] to-[#111111] border-x-[0.1vw] border-gray-600 fixed right-0 px-[0.5vw] max-md:w-auto max-md:bg-none max-md:border-0 ${option!=0 ? "max-md:hidden" : "max-md:block"}`}>
