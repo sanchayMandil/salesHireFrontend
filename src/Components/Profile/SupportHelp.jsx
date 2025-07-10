@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-function SupportHelp() {
+function SupportHelp({ setOption }) {
     const nav = useNavigate();
     const [form, setForm] = useState(false);
     const [countryCode, setCountryCode] = useState('+91');
@@ -110,7 +110,7 @@ function SupportHelp() {
     return (
         <div className="bg-gradient-to-br from-[#393939] to-[#121212] h-auto w-[85vw] max-md:w-[100vw] ">
             <button
-                onClick={() => nav(0)}
+                onClick={() => setOption(0) }
                 className="text-white poppins-bold -tracking-normal text-[2vw] max-md:text-[5vw] pl-[1vw] max-md:pl-[2vw] max-md:py-[2vw] cursor-pointer"
             >
                 <img
