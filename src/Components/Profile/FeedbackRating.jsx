@@ -2,7 +2,7 @@ import { useNavigate } from "react-router-dom";
 import {useDtaet, useState} from 'react'
 import { img } from "motion/react-client";
 
-function Feedbackrating({ setOption }){
+function Feedbackrating({setOption}){
     const nav = useNavigate();
     const [option, setoption]  = useState(1);
     //https://img.icons8.com/?size=100&id=2AuMnRFVB9b1&format=png&color=000000
@@ -39,7 +39,7 @@ function Feedbackrating({ setOption }){
         <>
         <div className="bg-[#202020] h-dvh overflow-auto w-[98vw] max-md:w-[100vw]">
              <button 
-                    onClick={() => setOption(0)}
+                    onClick={() => setOption(0)} 
                     className="text-white poppins-bold -tracking-normal text-[2vw] max-md:text-[5vw] pl-[1vw] max-md:pl-[2vw] max-md:py-[2vw] cursor-pointer"
                 >
                     <img 
